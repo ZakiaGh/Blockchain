@@ -1,6 +1,5 @@
 from wtforms import Form, StringField, DecimalField, IntegerField, TextAreaField, PasswordField, validators
 
-#form used on Register page
 class RegisterForm(Form):
     name = StringField('Full Name', [validators.Length(min=1,max=50)])
     username = StringField('Username', [validators.Length(min=4,max=25)])
@@ -8,7 +7,6 @@ class RegisterForm(Form):
     password = PasswordField('Password', [validators.DataRequired(), validators.EqualTo('confirm', message='Passwords do not match')])
     confirm = PasswordField('Confirm Password')
 
-#form used on the Transactions page
 class SendMoneyForm(Form):
     username = StringField('Username', [validators.Length(min=4,max=25)])
     amount = StringField('Amount', [validators.Length(min=1,max=50)])

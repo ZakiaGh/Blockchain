@@ -63,7 +63,6 @@ class Blockchain():
             else:
                 block.signature += 1
 
-    #check if blockchain is valid
     def isValid(self):
         for i in range(1,len(self.chain)):
             _previous = self.chain[i].previous_hash
