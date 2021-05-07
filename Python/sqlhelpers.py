@@ -97,7 +97,7 @@ def send_money(sender, recipient, amount):
     blockchain = get_blockchain()
     number = len(blockchain.chain) + 1
     data = "%s-->%s-->%s" %(sender, recipient, amount)
-    blockchain.mine(Block(number, data=data))
+    blockchain.proofofwork(Block(number, data=data))
     sync_blockchain(blockchain)
 
 def get_balance(username):
